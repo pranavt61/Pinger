@@ -1,0 +1,31 @@
+<div class="row mainFormRow">
+   <div class="col-md-4 mainForm"></div>
+   <div class="container col-md-4">
+      <form class="mainForm"
+      [formGroup]="imageForm"
+      (ngSubmit)="addImage(imageForm.value)">
+         <div class="form-group">
+            <label for="titlefield">Title:</label>
+            <input id="titlefield" [formControl]="imageForm.controls['titleFormControl']" type="text" class="form-control text-muted" #title>
+         </div>
+         <div class="form-group">
+            <label for="linkfield">Link:</label>
+            <input id="linkfield" [formControl]="imageForm.controls['linkFormControl']" type="text" class="form-control text-muted" #link>
+         </div>
+         <div *ngIf="!imageForm.valid && imageForm.touched">
+            Form is Invalid
+            <div *ngIf="imageForm.controls['titleFormControl'].hasError('required') && imageForm.controls['titleFormControl'].touched">
+               Title is Required
+            </div>
+            <div *ngIf="imageForm.controls['linkFormControl'].hasError('required') && imageForm.controls['linkFormControl'].touched">
+               Link is Required
+            </div>
+            <div *ngIf="imageForm.controls['linkFormControl'].hasError('invalidLink') && imageForm.controls['linkFormControl'].touched">
+               Link is Invalid
+            </div>
+         </div>
+         <button type="submit" class="btn btn-primary formMainButton">Submit Image!</button>
+      </form>
+   </div>
+   <div class="col-md-4 mainForm"></div>
+</div>
