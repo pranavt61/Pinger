@@ -33,6 +33,11 @@ export class FormViewComponent implements OnInit {
             Validators.required, linkValidator
          ])]
       });
+
+      //add listner to link field
+      this.imageForm.controls['linkFormControl'].valueChanges.subscribe(
+         (value: string) => {console.log("Link: ",value);}
+      );
    }
 
   addImage(form:any):void
