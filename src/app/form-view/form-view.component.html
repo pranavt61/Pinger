@@ -12,18 +12,6 @@
             <label for="linkfield">Link:</label>
             <input id="linkfield" [formControl]="imageForm.controls['linkFormControl']" type="text" class="form-control text-muted" #link>
          </div>
-         <div *ngIf="!imageForm.valid && imageForm.touched">
-            Form is Invalid
-            <div *ngIf="imageForm.controls['titleFormControl'].hasError('required') && imageForm.controls['titleFormControl'].touched">
-               Title is Required
-            </div>
-            <div *ngIf="imageForm.controls['linkFormControl'].hasError('required') && imageForm.controls['linkFormControl'].touched">
-               Link is Required
-            </div>
-            <div *ngIf="imageForm.controls['linkFormControl'].hasError('invalidLink') && imageForm.controls['linkFormControl'].touched">
-               Link is Invalid
-            </div>
-         </div>
          <button type="submit" class="btn btn-primary formMainButton">Submit Image!</button>
       </form>
    </div>

@@ -1,3 +1,20 @@
-
+<ng2-sidebar [(open)]="_sideBar" class="sideBar">
+      <p>Sidebar contents</p>
+      <img style="max-width:100%;max-height:100%;"src="https://cdn3.iconfinder.com/data/icons/gray-toolbar/512/menu-512.png" (click)="navBarClose()">
+    </ng2-sidebar>
+<div class="container header">
+   <div class="row">
+      <div class="col-md-1" >
+         <img style="max-width:100%;max-height:100%;"src="https://cdn3.iconfinder.com/data/icons/gray-toolbar/512/menu-512.png" (click)="navBarToggle()">
+      </div>
+      <div class="col-md-3">
+      </div>
+      <div class="col-md-4" >
+         <h3>Pinger</h3>
+      </div>
+      <div class="col-md-4" >
+      </div>
+   </div>
+</div>
 <form-view (newImageEvent)="addImageToDatabase($event)"></form-view>
 <image-list [images]="images"></image-list>
