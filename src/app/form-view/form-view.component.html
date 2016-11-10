@@ -1,5 +1,5 @@
 <div class="row mainFormRow">
-   <div class="col-md-4 mainForm"></div>
+   <div class="col-md-2 mainForm"></div>
    <div class="container col-md-4">
       <form class="mainForm"
       [formGroup]="imageForm"
@@ -26,6 +26,9 @@
          </div>
          <button type="submit" class="btn btn-primary formMainButton">Submit Image!</button>
       </form>
+   </div>
+   <div class="col-md-2">
+      <img class="previewImage" src="{{previewURL}}"/>
    </div>
    <div class="col-md-4 mainForm"></div>
 </div>

@@ -21,6 +21,8 @@ export class FormViewComponent implements OnInit {
 
    newImageEvent: EventEmitter<imageModel>;
    imageForm: FormGroup;
+   previewURL:string;
+   loadingImgURL:string;
 
    constructor(fb: FormBuilder)
    {
@@ -33,10 +35,21 @@ export class FormViewComponent implements OnInit {
             Validators.required, linkValidator
          ])]
       });
+      this.loadingImgURL = "http://hulk-games.com/themes/happywheels_v2//resources/img/loading.gif";
+      this.previewURL = this.loadingImgURL;
 
       //add listner to link field
       this.imageForm.controls['linkFormControl'].valueChanges.subscribe(
-         (value: string) => {console.log("Link: ",value);}
+         (value: string) => {
+            if(this.imageForm.controls['linkFormControl'].valid)
+            {
+               this.previewURL = this.imageForm.controls['linkFormControl'].value;
+            }
+            else
+            {
+               this.previewURL = this.loadingImgURL;
+            }
+         }
       );
    }
 

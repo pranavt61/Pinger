@@ -26,6 +26,11 @@ img.entryImage{
    margin-top: 75px;
    color:white;
 }
+.previewImage{
+   margin-top:75px;
+   max-width: 100%;
+   max-height: 100%;
+}
 button.formMainButton{
    margin-bottom: 10px;
 }
